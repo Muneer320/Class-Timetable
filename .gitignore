@@ -1,0 +1,260 @@
+# ===========================
+# College Timetable App
+# ===========================
+
+# ===== NODE.JS & NPM =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+.yarn/install-state.gz
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ===== REACT BUILD =====
+/frontend/build/
+/frontend/dist/
+build/
+dist/
+
+# ===== ENVIRONMENT VARIABLES =====
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.ipynb_checkpoints/
+
+# ===== VIRTUAL ENVIRONMENTS =====
+venv/
+env/
+ENV/
+.venv/
+.env/
+chainlit.md
+.chainlit
+
+# ===== GOOGLE SHEETS API CREDENTIALS =====
+*token.json*
+*credentials.json*
+GoogleSheets.json
+/scripts/GoogleSheets.json
+/scripts/credentials.json
+/scripts/service-account-key.json
+
+# ===== DATABASES =====
+*.db
+*.sqlite
+*.sqlite3
+agenthub/agents/youtube/db
+dump.rdb
+
+# ===== LOGS =====
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+/scripts/debug.log
+/scripts/fetch_log.txt
+error.log
+debug.log
+
+# ===== IDEs & EDITORS =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.ac
+
+# ===== OPERATING SYSTEMS =====
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE_BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# ===== TESTING & COVERAGE =====
+/coverage
+*.lcov
+.nyc_output
+test-results/
+coverage/
+
+# ===== CACHES =====
+.cache/
+.parcel-cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+*.tsbuildinfo
+.eslintcache
+
+# ===== DEPLOYMENT PLATFORMS =====
+.vercel
+.netlify/
+/.next/
+/out/
+next-env.d.ts
+
+# ===== TEMPORARY FILES =====
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ===== ARCHIVES =====
+**/*.zip
+**/*.tar.gz
+**/*.tar
+**/*.tgz
+*.pack
+*.deb
+*.dylib
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+
+# ===== RUNTIME DATA =====
+pids/
+*.pid
+*.seed
+*.pid.lock
+*.pem
+
+# ===== MOBILE DEVELOPMENT =====
+android-sdk/
+
+# ===== DATA FILES =====
+# Keep structure but ignore actual data
+/frontend/public/data/*.json
+!/frontend/public/data/.gitkeep
+
+# ===== BUILD ARTIFACTS =====
+*.tgz
+*.tar.gz
+build/Release
+
+# ===== JUPYTER NOTEBOOK =====
+.ipynb_checkpoints
+
+# ===== PYTHON PACKAGE MANAGERS =====
+# pipenv
+Pipfile.lock
+
+# pyenv
+.python-version
+
+# PEP 582
+__pypackages__/
+
+# ===== TYPE CHECKERS =====
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# ===== DOCUMENTATION =====
+/site
+
+# ===== LOCAL DEVELOPMENT =====
+.local/
+local/
+deploy/
+deployment/
+
+# ===== OPTIONAL DEPENDENCIES =====
+.npm
+jspm_packages/
+bower_components
+
+# ===== BUILD TOOLS =====
+.grunt
+.lock-wscript
+
+# ===== OPTIONAL REPL HISTORY =====
+.node_repl_history
+
+# ===== YARN INTEGRITY =====
+.yarn-integrity
+
+# ===== STORYBOOK =====
+.out
+.storybook-out
+
+# ===== GATSBY =====
+.cache/
+public
+
+# ===== NUXT.JS =====
+.nuxt
+
+# ===== CELERY =====
+celerybeat-schedule
+celerybeat.pid
+
+# ===== SAGEMATH =====
+*.sage.py
+
+# ===== PROJECT SETTINGS =====
+.spyderproject
+.spyproject
+.ropeproject
+
+# ===== END ===== 
