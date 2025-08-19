@@ -240,7 +240,6 @@ bower_components
 
 # ===== GATSBY =====
 .cache/
-public
 
 # ===== NUXT.JS =====
 .nuxt

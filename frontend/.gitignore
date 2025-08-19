@@ -184,7 +184,6 @@ android-sdk/
 # ===== DATA FILES =====
 # Keep structure but ignore actual data
 /frontend/public/data/*.json
-!/frontend/public/data/.gitkeep
 
 # ===== BUILD ARTIFACTS =====
 *.tgz
@@ -240,7 +239,6 @@ bower_components
 
 # ===== GATSBY =====
 .cache/
-public
 
 # ===== NUXT.JS =====
 .nuxt
