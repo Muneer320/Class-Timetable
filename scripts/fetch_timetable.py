@@ -30,7 +30,7 @@ from dotenv import load_dotenv
 
 
 class TimetableDataFetcher:
-    def __init__(self):
+    def __init__(self, credentials_path: Optional[str] = None):
         # Load local .env
         load_dotenv(
             dotenv_path=os.path.join(os.path.dirname(__file__), ".env"),
@@ -59,21 +59,73 @@ class TimetableDataFetcher:
         os.makedirs(os.path.dirname(self.database_path), exist_ok=True)
         os.makedirs(self.json_output_path, exist_ok=True)
 
-        self._initialize_service()
+        self._initialize_service(credentials_path)
         self._initialize_database()
 
-    def _initialize_service(self):
+    def _initialize_service(self, credentials_path: Optional[str] = None):
         """Initialize Google Sheets service (from file, JSON env, or discrete env vars)."""
         try:
             scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-            cred_file = os.getenv("GOOGLE_CREDENTIALS_FILE") or os.getenv(
-                "GOOGLE_APPLICATION_CREDENTIALS")
-
-            if cred_file and os.path.exists(cred_file):
+            # Priority 1: explicit credentials file via CLI
+            if credentials_path and os.path.exists(credentials_path):
                 self.credentials = service_account.Credentials.from_service_account_file(
-                    cred_file, scopes=scopes
+                    credentials_path, scopes=scopes
                 )
+            else:
+                # Priority 2: file path from env
+                cred_file = os.getenv("GOOGLE_CREDENTIALS_FILE") or os.getenv(
+                    "GOOGLE_APPLICATION_CREDENTIALS")
+                cred_json_str = os.getenv("GOOGLE_CREDENTIALS_JSON")
+
+                if cred_file and os.path.exists(cred_file):
+                    self.credentials = service_account.Credentials.from_service_account_file(
+                        cred_file, scopes=scopes
+                    )
+                elif cred_json_str:
+                    info = json.loads(cred_json_str)
+                    self.credentials = service_account.Credentials.from_service_account_info(
+                        info, scopes=scopes
+                    )
+                else:
+                    # Priority 3: discrete env variables
+                    private_key = (os.getenv("GOOGLE_PRIVATE_KEY")
+                                   or "").replace('\\n', '\n')
+                    client_email = os.getenv("GOOGLE_CLIENT_EMAIL")
+                    project_id = os.getenv("GOOGLE_PROJECT_ID")
+                    private_key_id = os.getenv("GOOGLE_PRIVATE_KEY_ID")
+                    client_id = os.getenv("GOOGLE_CLIENT_ID")
+
+                    missing = [name for name, val in [
+                        ("GOOGLE_PRIVATE_KEY", private_key.strip()),
+                        ("GOOGLE_CLIENT_EMAIL", client_email),
+                        ("GOOGLE_PROJECT_ID", project_id),
+                        ("GOOGLE_PRIVATE_KEY_ID", private_key_id),
+                        ("GOOGLE_CLIENT_ID", client_id),
+                    ] if not val]
+                    if missing:
+                        raise RuntimeError(
+                            "Missing Google credentials env vars: " + ", ".join(missing))
+
+                    assert client_email is not None
+                    creds_json = {
+                        "type": "service_account",
+                        "project_id": project_id,
+                        "private_key_id": private_key_id,
+                        "private_key": private_key,
+                        "client_email": client_email,
+                        "client_id": client_id,
+                        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                        "token_uri": "https://oauth2.googleapis.com/token",
+                        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                        "client_x509_cert_url": f"https://www.googleapis.com/robot/v1/metadata/x509/{quote(client_email)}",
+                        "universe_domain": "googleapis.com",
+                    }
+
+                    self.credentials = service_account.Credentials.from_service_account_info(
+                        creds_json, scopes=scopes
+                    )
+
             self.service = build('sheets', 'v4', credentials=self.credentials)
             print("✅ Google Sheets service initialized successfully")
 
@@ -128,7 +180,7 @@ class TimetableDataFetcher:
         ).execute()
         return [s["properties"]["title"] for s in meta.get("sheets", [])]
 
-    def fetch_sheet_data(self, sheet_index: int = 0):
+    def fetch_sheet_data(self, sheet_index: int = 0, range_override: Optional[str] = None):
         """Fetch data from a worksheet."""
         try:
             if not self.service:
@@ -140,7 +192,7 @@ class TimetableDataFetcher:
                     f"Sheet index {sheet_index} out of range (found {len(titles)} sheets).")
 
             sheet_name = titles[sheet_index]
-            a1_range = self.default_range
+            a1_range = range_override or self.default_range
             range_to_use = f"'{sheet_name}'!{a1_range}"
 
             print(
@@ -538,14 +590,15 @@ class TimetableDataFetcher:
             print(f"❌ Error exporting to JSON: {str(e)}")
             raise
 
-    def run(self):
+    def run(self, range_name: Optional[str] = None):
         """Main execution method"""
         try:
             print("🚀 Starting timetable data fetch...")
             print(f"📅 Current time: {datetime.now().isoformat()}")
 
             sheet_index = 0  # timetable is always the first sheet
-            raw_data = self.fetch_sheet_data(sheet_index=sheet_index)
+            raw_data = self.fetch_sheet_data(
+                sheet_index=sheet_index, range_override=range_name)
 
             timetable_data = self.parse_timetable_data(raw_data)
             self.save_to_database(timetable_data)
@@ -560,9 +613,22 @@ class TimetableDataFetcher:
 
 def main():
     """Main function"""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Fetch timetable data from Google Sheets")
+    parser.add_argument(
+        "--credentials", help="Path to Google Service Account credentials JSON file")
+    parser.add_argument(
+        "--sheet-range", help="Optional A1 sheet range (overrides SHEET_RANGE/env)")
+    parser.add_argument("--verbose", "-v", action="store_true",
+                        help="Enable verbose output")
+
+    args = parser.parse_args()
+
     try:
-        fetcher = TimetableDataFetcher()
-        fetcher.run()
+        fetcher = TimetableDataFetcher(credentials_path=args.credentials)
+        fetcher.run(range_name=args.sheet_range)
     except Exception as e:
         print(f"❌ Script failed: {str(e)}")
         exit(1)
