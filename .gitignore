@@ -71,13 +71,6 @@ GoogleSheets.json
 /scripts/credentials.json
 /scripts/service-account-key.json
 
-# ===== DATABASES =====
-*.db
-*.sqlite
-*.sqlite3
-agenthub/agents/youtube/db
-dump.rdb
-
 # ===== LOGS =====
 logs/
 *.log
@@ -180,11 +173,6 @@ pids/
 
 # ===== MOBILE DEVELOPMENT =====
 android-sdk/
-
-# ===== DATA FILES =====
-# Keep structure but ignore actual data
-/frontend/public/data/*.json
-!/frontend/public/data/.gitkeep
 
 # ===== BUILD ARTIFACTS =====
 *.tgz

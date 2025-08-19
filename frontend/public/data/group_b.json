@@ -1,0 +1,186 @@
+{
+  "group": "B",
+  "entries": [
+    {
+      "id": "1479751f-886a-4d13-9d78-8bc71a8fe100",
+      "group": "B",
+      "day": "Monday",
+      "time_slot": {
+        "start_time": "11:30",
+        "end_time": "14:00",
+        "duration_minutes": 150
+      },
+      "course": {
+        "course_code": "W1",
+        "course_name": "WebDev 101",
+        "instructor": "Priyanshi",
+        "credits": 3
+      },
+      "room": "Class A - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "2e556f70-a6c7-4027-8347-b9ace419ab12",
+      "group": "B",
+      "day": "Wednesday",
+      "time_slot": {
+        "start_time": "11:30",
+        "end_time": "14:00",
+        "duration_minutes": 150
+      },
+      "course": {
+        "course_code": "I",
+        "course_name": "ICP",
+        "instructor": "Utkarsh",
+        "credits": 3
+      },
+      "room": "Class A - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "8b32213d-df2c-44c9-912f-eb43eebf35ef",
+      "group": "B",
+      "day": "Tuesday",
+      "time_slot": {
+        "start_time": "12:30",
+        "end_time": "14:00",
+        "duration_minutes": 90
+      },
+      "course": {
+        "course_code": "M",
+        "course_name": "Mathematics",
+        "instructor": "Ayush",
+        "credits": 3
+      },
+      "room": "Class C - Ground Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "51227ded-4b57-4dff-b2c8-fe55cc60afd3",
+      "group": "B",
+      "day": "Thursday",
+      "time_slot": {
+        "start_time": "12:30",
+        "end_time": "14:00",
+        "duration_minutes": 90
+      },
+      "course": {
+        "course_code": "M",
+        "course_name": "Mathematics",
+        "instructor": "Ayush",
+        "credits": 3
+      },
+      "room": "Class C - Ground Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "aaec9110-9ca7-47d0-8069-92f6a9b4f5c4",
+      "group": "B",
+      "day": "Friday",
+      "time_slot": {
+        "start_time": "12:30",
+        "end_time": "14:00",
+        "duration_minutes": 90
+      },
+      "course": {
+        "course_code": "E-I",
+        "course_name": "English - I",
+        "instructor": "Fiza",
+        "credits": 3
+      },
+      "room": "Class B1 - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "d2f711c3-bbeb-43f0-994d-187043befa76",
+      "group": "B",
+      "day": "Monday",
+      "time_slot": {
+        "start_time": "15:00",
+        "end_time": "19:30",
+        "duration_minutes": 270
+      },
+      "course": {
+        "course_code": "E-I",
+        "course_name": "English - I",
+        "instructor": "Fiza",
+        "credits": 3
+      },
+      "room": "Class B1 - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "88057dba-9477-46ba-9008-60fd7217de74",
+      "group": "B",
+      "day": "Tuesday",
+      "time_slot": {
+        "start_time": "15:00",
+        "end_time": "19:30",
+        "duration_minutes": 270
+      },
+      "course": {
+        "course_code": "I",
+        "course_name": "ICP",
+        "instructor": "Utkarsh",
+        "credits": 3
+      },
+      "room": "Class A - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "23bd61db-667c-4998-841d-f14c1cb9d657",
+      "group": "B",
+      "day": "Wednesday",
+      "time_slot": {
+        "start_time": "15:00",
+        "end_time": "19:30",
+        "duration_minutes": 270
+      },
+      "course": {
+        "course_code": "W1",
+        "course_name": "WebDev 101",
+        "instructor": "Priyanshi",
+        "credits": 3
+      },
+      "room": "Class A - 1st Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "444bb3d6-231d-4ee2-a056-d57b4244349a",
+      "group": "B",
+      "day": "Friday",
+      "time_slot": {
+        "start_time": "15:00",
+        "end_time": "19:30",
+        "duration_minutes": 270
+      },
+      "course": {
+        "course_code": "I",
+        "course_name": "ICP",
+        "instructor": "Utkarsh",
+        "credits": 3
+      },
+      "room": "Class A - 2nd Floor",
+      "entry_type": "Lecture"
+    },
+    {
+      "id": "aa89f50a-1106-404a-b3eb-b3a284b78e11",
+      "group": "B",
+      "day": "Thursday",
+      "time_slot": {
+        "start_time": "16:30",
+        "end_time": "19:30",
+        "duration_minutes": 180
+      },
+      "course": {
+        "course_code": "ACA",
+        "course_name": "Academic Club Activities",
+        "instructor": "Class A&C - 2nd Floor",
+        "credits": 3
+      },
+      "room": "TBD",
+      "entry_type": "Lecture"
+    }
+  ],
+  "total_classes": 10
+}

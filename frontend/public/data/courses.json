@@ -1,0 +1,279 @@
+{
+  "courses": [
+    {
+      "course_code": "W1",
+      "course_name": "WebDev 101",
+      "instructor": "Priyanshi",
+      "credits": 3,
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "schedule": [
+        {
+          "group": "A",
+          "day": "Tuesday",
+          "time": "11:00 - 13:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "A",
+          "day": "Thursday",
+          "time": "11:00 - 13:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Monday",
+          "time": "11:30 - 14:00",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Wednesday",
+          "time": "15:00 - 19:30",
+          "room": "Class A - 1st Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Tuesday",
+          "time": "11:00 - 13:30",
+          "room": "Class C - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Thursday",
+          "time": "11:00 - 13:30",
+          "room": "Class C - 2nd Floor",
+          "type": "Lecture"
+        }
+      ]
+    },
+    {
+      "course_code": "I",
+      "course_name": "ICP",
+      "instructor": "Utkarsh",
+      "credits": 3,
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "schedule": [
+        {
+          "group": "A",
+          "day": "Friday",
+          "time": "11:00 - 13:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "A",
+          "day": "Monday",
+          "time": "15:00 - 19:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "A",
+          "day": "Wednesday",
+          "time": "15:00 - 19:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Wednesday",
+          "time": "11:30 - 14:00",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Tuesday",
+          "time": "15:00 - 19:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Friday",
+          "time": "15:00 - 19:30",
+          "room": "Class A - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Monday",
+          "time": "15:00 - 19:30",
+          "room": "Class C - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Wednesday",
+          "time": "15:00 - 19:30",
+          "room": "Class C - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Friday",
+          "time": "15:00 - 19:30",
+          "room": "Class C - 2nd Floor",
+          "type": "Lecture"
+        }
+      ]
+    },
+    {
+      "course_code": "E-I",
+      "course_name": "English - I",
+      "instructor": "Fiza",
+      "credits": 3,
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "schedule": [
+        {
+          "group": "A",
+          "day": "Monday",
+          "time": "12:00 - 13:30",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "A",
+          "day": "Wednesday",
+          "time": "12:00 - 13:30",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Friday",
+          "time": "12:30 - 14:00",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Monday",
+          "time": "15:00 - 19:30",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Tuesday",
+          "time": "15:00 - 19:30",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Thursday",
+          "time": "15:00 - 16:30",
+          "room": "Class B1 - 2nd Floor",
+          "type": "Lecture"
+        }
+      ]
+    },
+    {
+      "course_code": "M",
+      "course_name": "Mathematics",
+      "instructor": "Ayush",
+      "credits": 3,
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "schedule": [
+        {
+          "group": "A",
+          "day": "Tuesday",
+          "time": "15:00 - 19:30",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "A",
+          "day": "Thursday",
+          "time": "15:00 - 16:30",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Tuesday",
+          "time": "12:30 - 14:00",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Thursday",
+          "time": "12:30 - 14:00",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Wednesday",
+          "time": "12:00 - 13:30",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Friday",
+          "time": "12:00 - 13:30",
+          "room": "Class C - Ground Floor",
+          "type": "Lecture"
+        }
+      ]
+    },
+    {
+      "course_code": "ACA",
+      "course_name": "Academic Club Activities",
+      "instructor": "Class A&C - 2nd Floor",
+      "credits": 3,
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "schedule": [
+        {
+          "group": "A",
+          "day": "Thursday",
+          "time": "16:30 - 19:30",
+          "room": "TBD",
+          "type": "Lecture"
+        },
+        {
+          "group": "B",
+          "day": "Thursday",
+          "time": "16:30 - 19:30",
+          "room": "TBD",
+          "type": "Lecture"
+        },
+        {
+          "group": "C",
+          "day": "Thursday",
+          "time": "16:30 - 19:30",
+          "room": "TBD",
+          "type": "Lecture"
+        }
+      ]
+    }
+  ]
+}
